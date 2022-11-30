@@ -1,0 +1,88 @@
+@import "utils";
+
+.third-section {
+  background-color: $color1;
+  color: $white;
+  position: relative;
+  overflow: hidden;
+  padding: 8rem 10rem !important;
+  > h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    > span {
+      color: $color4;
+    }
+  }
+  .testimonial-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    .testimonial-col {
+      text-align: center;
+      > img {
+        width: 60px;
+        object-fit: cover;
+      }
+      > .user-img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 2px solid $white;
+        margin: 1rem 0;
+      }
+      > h3 {
+        color: $color4;
+      }
+      > .designation {
+        font-style: italic;
+        font-weight: bolder;
+        font-size: 13px;
+      }
+      > p {
+        font-size: 16px;
+        line-height: 27px;
+        font-weight: bold;
+      }
+    }
+  }
+  &::before {
+    content: "";
+    width: 150px;
+    height: 100px;
+    background-color: $color2;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &::after {
+    content: "";
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: $color3;
+    position: absolute;
+    bottom: -100px;
+    right: 0px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .third-section {
+    padding: 8rem 2rem !important;
+    .testimonial-row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+@media screen and (max-width: 690px) {
+  .third-section {
+    > h1 {
+      font-size: 2rem;
+    }
+    .testimonial-row {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

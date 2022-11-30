@@ -1,0 +1,52 @@
+@import "utils";
+
+.second-about-section {
+  background-color: $color2;
+  color: $white;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 8rem !important;
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin: 5rem 0 2rem;
+  }
+  .director-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  &::before {
+    content: "";
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: -90px;
+    border-radius: 50%;
+    background-color: $color1;
+  }
+  &::after {
+    content: "";
+    width: 90px;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    background-color: $color1;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .second-about-section {
+    padding: 4rem 1.1rem !important;
+    h1 {
+      font-size: 2rem;
+      margin-top: 10rem;
+    }
+    &::after {
+      display: none;
+    }
+  }
+}

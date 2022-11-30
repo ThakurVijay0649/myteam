@@ -1,0 +1,43 @@
+@import "utils";
+
+.third-about-section {
+  background-color: $color1;
+  color: $white;
+  overflow: hidden;
+  position: relative;
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin: 5rem 0 2rem;
+  }
+  .client-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    > img {
+      width: 150px;
+      margin: 1rem 2rem;
+    }
+  }
+  &::before {
+    content: "";
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    left: -90px;
+    background-color: $color2;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .third-about-section {
+    padding: 10rem 1.5rem !important;
+    h1 {
+      font-size: 2rem;
+      margin-top: 4rem;
+    }
+  }
+}

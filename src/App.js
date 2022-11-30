@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import About from './Components/About';
+import Header from './Components/Header';
+import Home from './Components/Home';
+import "./Styles/App.scss";
+import Footer from "./Components/Footer"
+import Contact from './Components/Contact';
 
 function App() {
+  const [tab, setTab] = useState(window.location.pathname)
+
+  useEffect(() => {
+    if (tab === "/") {
+      document.title = "MYTEAM - HOME"
+    }
+    if (tab === "/about") {
+      document.title = "MYTEAM - ABOUT"
+    }
+    if (tab === "/contact") {
+      document.title = "MYTEAM - CONTACT"
+    }
+  }, [tab]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header tab={tab} setTab={setTab} />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/about" element={<About />} />
+        <Route exact path="/contact" element={<Contact />} />
+        <Route exact path="*" element={<Navigate to="/" />} />
+      </Routes>
+      <Footer tab={tab} setTab={setTab} />
+    </Router>
   );
 }
 

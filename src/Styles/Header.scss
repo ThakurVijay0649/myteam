@@ -1,0 +1,64 @@
+@import "utils";
+
+header {
+  @include flex(row, space-between, center);
+  background-color: $color1;
+  padding: 4rem 10rem;
+  .left {
+    @include flex(row, space-between, center);
+    .logo {
+      font-size: 2.6rem;
+      font-weight: bolder;
+    }
+    ul {
+      @include flex(row, space-between, center);
+      padding-left: 3rem;
+      li {
+        list-style: none;
+        padding-left: 1.5rem;
+        a {
+          font-size: 1.2rem;
+          font-weight: bold;
+          transition: all 0.3s;
+          &:hover {
+            color: $color3 !important;
+          }
+        }
+      }
+    }
+  }
+  .right {
+    a {
+      border: 2px solid #fff;
+      padding: 10px 30px;
+      border-radius: 29px;
+      transition: all 0.2s;
+      font-size: 1.2rem;
+      font-weight: bold;
+      &:hover {
+        background-color: $white;
+        color: $color1 !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 920px) {
+  header {
+    padding: 2rem 1rem !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    flex-direction: column;
+    .left {
+      ul {
+        padding: 0 !important;
+      }
+    }
+    .right {
+      margin-top: 1.5rem;
+    }
+  }
+}

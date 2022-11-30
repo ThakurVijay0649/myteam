@@ -1,0 +1,14 @@
+$color1: #011356;
+$color2: #000512;
+$color3: #11ddd3;
+$color4: #79c8c7;
+$color5: hsla(0, 0%, 100%, 0.6);
+$color6: #020e2c;
+$white: #fff;
+
+@mixin flex($flex-direction, $justify-content, $align-items) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}

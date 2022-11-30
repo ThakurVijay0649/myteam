@@ -1,0 +1,52 @@
+@import "utils";
+
+.first-about-section {
+  background-color: $color1;
+  color: $white;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 3rem 10rem 10rem !important;
+  @include flex(row, space-between, flex-start);
+  .left-first-about-section {
+    flex-basis: 40%;
+    h1 {
+      font-size: 3.5rem;
+      color: $white;
+    }
+  }
+  .right-first-about-section {
+    flex-basis: 60%;
+    > svg {
+      font-size: 4rem;
+      color: $color3;
+    }
+    > p {
+      padding-top: 15px;
+      font-size: 1.2rem;
+      line-height: 34px;
+      color: white;
+      font-weight: bold;
+    }
+  }
+  &::after {
+    content: "";
+    width: 200px;
+    height: 200px;
+    background-color: $color3;
+    border-radius: 50%;
+    position: absolute;
+    right: -90px;
+    bottom: 0px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .first-about-section {
+    flex-direction: column;
+    padding: 3rem 1.5rem !important;
+    &::after {
+      display: none;
+    }
+  }
+}
